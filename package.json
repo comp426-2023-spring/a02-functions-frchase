@@ -1,0 +1,27 @@
+{
+  "name": "a02-functions-frchase",
+  "version": "1.0.0",
+  "description": "this is my project for a02 comp 426",
+  "main": "server.js",
+  "scripts": {
+    "test": "node cli.js -n 35.92 -w 79.05 -z America/New_York"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/comp426-2023-spring/a02-functions-frchase.git"
+  },
+  "author": "frchase",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/comp426-2023-spring/a02-functions-frchase/issues"
+  },
+  "homepage": "https://github.com/comp426-2023-spring/a02-functions-frchase#readme",
+  "dependencies": {
+    "minimist": "^1.2.8",
+    "moment-timezone": "^0.5.43",
+    "node-fetch": "^3.3.1"
+  },
+   "bin": {
+    "galosh.js": "./cli.js"
+  }
+}
