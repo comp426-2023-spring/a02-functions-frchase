@@ -28,16 +28,33 @@ if (argvMin["h"]) {
 
 function coordinateVal(coordinate) {
     if(isNaN(parseFloat(coordinate))) {
-        process.exit(0.0)
+        process.exit(0.0);
     }
 
-    return coordinate
+    return coordinate;
 }
 
 let latitude;
 let longitude;
-var timezone = moment.tz.guess()
+var timezone = moment.tz.guess();
 
+if (argvMin.e) {
+    longitude = coordinateVal(argvMin.e);
+} else if (argvMin.w){
+    longitude = -coordinateVal(argvMin.w);
+}
+
+if (argvMin.n) {
+    latitude = coordinateVal(argvMin.n);
+} else if (argvMin.s){
+    latitude = -coordinateVal(argvMin.s);
+}
+
+if (argvMin.z) {
+    timezone = argvMin.z;
+} else {
+    timezone = timezone;
+}
 
 
 
