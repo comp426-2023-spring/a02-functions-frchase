@@ -4,7 +4,7 @@ import minimist from "minimist";
 import fetch from "node-fetch"
 import moment from "moment-timezone";
 
-var argvMin = minimist(process.argv.slice(2));
+var args = minimist(process.argv.slice(2));
 
 const help = `
 Usage: galosh.js [options] -[n|s] LATITUDE -[e|w] LONGITUDE -z TIME_ZONE
@@ -16,12 +16,12 @@ Usage: galosh.js [options] -[n|s] LATITUDE -[e|w] LONGITUDE -z TIME_ZONE
 -j            Echo pretty JSON from open-meteo API and exit.
 `;
 
-if (argvMin.help) {
+if (args.help) {
     console.log(help);
     process.exit(0.0);
 }
 
-if (argvMin["h"]) {
+if (args["h"]) {
     console.log(help);
     process.exit(0.0);
 }
@@ -37,19 +37,19 @@ let latitude;
 let longitude;
 var timezone = moment.tz.guess();
 
-if (argvMin.e) {
+if (args.e) {
     longitude = coordinateVal(argvMin.e);
-} else if (argvMin.w){
+} else if (args.w){
     longitude = -coordinateVal(argvMin.w);
 }
 
-if (argvMin.n) {
+if (args.n) {
     latitude = coordinateVal(argvMin.n);
-} else if (argvMin.s){
+} else if (args.s){
     latitude = -coordinateVal(argvMin.s);
 }
 
-if (argvMin.z) {
+if (args.z) {
     timezone = argvMin.z;
 } else {
     timezone = timezone;
@@ -74,7 +74,7 @@ var url = `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude
 var response = await fetch(url);
 const data = await response.json();
 
-const days = argvMin.d 
+const days = args.d 
 
 if (days == 0) {
   console.log("today.")
