@@ -56,6 +56,21 @@ if (argvMin.z) {
     timezone = timezone;
 }
 
+if (!timezone) {
+    console.log("no timezone");
+    process.exit(0.0);
+}
 
+if (!latitude) {
+    console.log("no latitude");
+    process.exit(0.0);
+}
 
+if (!longitude) {
+    console.log("no longitude");
+    process.exit(0.0);
+}
 
+var url = `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&daily=precipitation_hours&timezone=${timezone}&current_weather=true`;
+var response = await fetch(url);
+const data = await response.json();
