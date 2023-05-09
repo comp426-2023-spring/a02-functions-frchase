@@ -16,7 +16,7 @@ Usage: galosh.js [options] -[n|s] LATITUDE -[e|w] LONGITUDE -z TIME_ZONE
 -j            Echo pretty JSON from open-meteo API and exit.
 `;
 
-if (argv.help) {
+if (argvMin.help) {
     console.log(help);
     process.exit(0.0);
 }
