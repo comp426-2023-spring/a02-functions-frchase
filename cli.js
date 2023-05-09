@@ -74,3 +74,18 @@ if (!longitude) {
 var url = `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&daily=precipitation_hours&timezone=${timezone}&current_weather=true`;
 var response = await fetch(url);
 const data = await response.json();
+
+const days = argvMin.d 
+
+if (days == 0) {
+  console.log("today.")
+} else if (days > 1) {
+  console.log("in " + days + " days.")
+} else {
+  console.log("tomorrow.")
+}
+
+if (argvMin.j) {
+    console.log(data);
+    process.exit(0.0);
+}
