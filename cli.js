@@ -33,8 +33,8 @@ function coordinateVal(coordinate) {
     return coordinate;
 }
 
-let latitude
-let longitude
+let latitude;
+let longitude;
 var timezone = moment.tz.guess();
 
 if (args.e) {
