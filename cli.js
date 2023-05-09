@@ -38,19 +38,19 @@ let longitude;
 var timezone = moment.tz.guess();
 
 if (args.e) {
-    longitude = coordinateVal(argvMin.e);
+    longitude = coordinateVal(args.e);
 } else if (args.w){
-    longitude = -coordinateVal(argvMin.w);
+    longitude = -coordinateVal(args.w);
 }
 
 if (args.n) {
-    latitude = coordinateVal(argvMin.n);
+    latitude = coordinateVal(args.n);
 } else if (args.s){
-    latitude = -coordinateVal(argvMin.s);
+    latitude = -coordinateVal(args.s);
 }
 
 if (args.z) {
-    timezone = argvMin.z;
+    timezone = args.z;
 } else {
     timezone = timezone;
 }
@@ -84,7 +84,7 @@ if (days == 0) {
   console.log("tomorrow.")
 }
 
-if (argvMin.j) {
+if (args.j) {
     console.log(data);
     process.exit(0.0);
 }
