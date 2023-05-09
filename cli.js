@@ -21,8 +21,24 @@ if (argvMin.help) {
     process.exit(0.0);
 }
 
-if (argvMin.h) {
+if (argvMin["h"]) {
     console.log(help);
     process.exit(0.0);
 }
+
+function coordinateVal(coordinate) {
+    if(isNaN(parseFloat(coordinate))) {
+        process.exit(0.0)
+    }
+
+    return coordinate
+}
+
+let latitude;
+let longitude;
+var timezone = moment.tz.guess()
+
+
+
+
 
