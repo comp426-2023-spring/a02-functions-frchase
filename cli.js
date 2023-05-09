@@ -30,7 +30,6 @@ function coordinateVal(coordinate) {
     if(isNaN(parseFloat(coordinate))) {
         process.exit(0.0);
     }
-
     return coordinate;
 }
 
@@ -57,17 +56,17 @@ if (argvMin.z) {
 }
 
 if (!timezone) {
-    console.log("no timezone");
+    console.log("Timezone must be in range");
     process.exit(0.0);
 }
 
 if (!latitude) {
-    console.log("no latitude");
+    console.log("Latitude must be in range");
     process.exit(0.0);
 }
 
 if (!longitude) {
-    console.log("no longitude");
+    console.log("Longitude must be in range");
     process.exit(0.0);
 }
 
